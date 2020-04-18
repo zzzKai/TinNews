@@ -25,8 +25,7 @@ public class RetrofitClient {
                 .client(okHttpClient)
                 .build();
     }
-
-
+    
 
     private static class HeaderInterceptor implements Interceptor {
 
