@@ -16,6 +16,7 @@ public class RetrofitClient {
     private static final String BASE_URL = "https://newsapi.org/v2/";
 
     public static Retrofit newInstance(Context context) {
+        // make actual HTTP request
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .addInterceptor(new HeaderInterceptor())
                 .build();
@@ -25,7 +26,7 @@ public class RetrofitClient {
                 .client(okHttpClient)
                 .build();
     }
-    
+
 
     private static class HeaderInterceptor implements Interceptor {
 
