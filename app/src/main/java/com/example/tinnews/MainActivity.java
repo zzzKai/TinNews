@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         NewsApi api = RetrofitClient.newInstance(this).create(NewsApi.class);
 
+
         api.getTopHeadlines("US").enqueue(new Callback<NewsResponse>() {
             @Override
             public void onResponse(Call<NewsResponse> call, Response<NewsResponse> response) {
