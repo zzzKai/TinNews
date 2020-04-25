@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 
 import com.example.tinnews.R;
 import com.example.tinnews.databinding.FragmentHomeBinding;
+import com.example.tinnews.model.Article;
 import com.example.tinnews.repository.NewsRepository;
 import com.example.tinnews.repository.NewsViewModelFactory;
 import com.mindorks.placeholderview.SwipeDecor;
@@ -67,6 +68,10 @@ public class HomeFragment extends Fragment {
                         newsResponse -> {
                             if (newsResponse != null) {
                                 Log.d("HomeFragment", newsResponse.toString());
+                                for (Article article : newsResponse.articles) {
+                                    TinNewsCard tinNewsCard = new TinNewsCard(article);
+                                    binding.swipeView.addView(tinNewsCard);
+                                }
                             }
                         });
 
