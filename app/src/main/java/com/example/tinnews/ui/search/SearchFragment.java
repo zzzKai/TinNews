@@ -54,8 +54,7 @@ public class SearchFragment extends Fragment {
                 });
 
         NewsRepository repository = new NewsRepository(getContext());
-        viewModel = new ViewModelProvider(this, new NewsViewModelFactory(repository))
-                .get(SearchViewModel.class);
+        viewModel = new ViewModelProvider(this, new NewsViewModelFactory(repository)).get(SearchViewModel.class);
         viewModel
                 .searchNews()
                 .observe(
