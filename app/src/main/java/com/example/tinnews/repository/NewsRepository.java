@@ -79,8 +79,7 @@ public class NewsRepository {
 
     public LiveData<Boolean> favoriteArticle(Article article) {
         MutableLiveData<Boolean> isSuccessLiveData = new MutableLiveData<>();
-        asyncTask =
-                new AsyncTask<Void, Void, Boolean>() {
+        asyncTask = new AsyncTask<Void, Void, Boolean>() {
                     @Override
                     protected Boolean doInBackground(Void... voids) {
                         try {
