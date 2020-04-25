@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.tinnews.R;
+import com.example.tinnews.databinding.FragmentSearchBinding;
 import com.example.tinnews.repository.NewsRepository;
 import com.example.tinnews.repository.NewsViewModelFactory;
 
@@ -22,6 +23,7 @@ import com.example.tinnews.repository.NewsViewModelFactory;
 public class SearchFragment extends Fragment {
 
     private SearchViewModel viewModel;
+    private FragmentSearchBinding binding;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -32,7 +34,9 @@ public class SearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false);
+        //return inflater.inflate(R.layout.fragment_search, container, false);
+        binding = FragmentSearchBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
 
     @Override
