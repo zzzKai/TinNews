@@ -16,6 +16,7 @@ import com.example.tinnews.R;
 import com.example.tinnews.databinding.FragmentHomeBinding;
 import com.example.tinnews.repository.NewsRepository;
 import com.example.tinnews.repository.NewsViewModelFactory;
+import com.mindorks.placeholderview.SwipeDecor;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -44,6 +45,16 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        binding
+                .swipeView
+                .getBuilder()
+                .setDisplayViewCount(3)
+                .setSwipeDecor(new SwipeDecor().setPaddingTop(20)
+                .setRelativeScale(0.01f));
+
+        binding.rejectBtn.setOnClickListener(v -> binding.swipeView.doSwipe(false));
+        binding.acceptBtn.setOnClickListener(v -> binding.swipeView.doSwipe(true));
+
 
         NewsRepository repository = new NewsRepository(getContext());
         viewModel = new ViewModelProvider(this, new NewsViewModelFactory(repository))
