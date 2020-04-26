@@ -27,9 +27,11 @@ public class TinNewsCard {
     private TextView newsDescription;
 
     private final Article article;
+    private final OnSwipeListener onSwipeListener;
 
-    public TinNewsCard(Article news) {
+    public TinNewsCard(Article news, OnSwipeListener onSwipeListener) {
         this.article = news;
+        this.onSwipeListener = onSwipeListener;
     }
 
     @Resolve
@@ -47,6 +49,7 @@ public class TinNewsCard {
     @SwipeOut
     private void onSwipedOut() {
         Log.d("EVENT", "onSwipedOut");
+        onSwipeListener.onDisLike(article);
     }
 
     @SwipeCancelState
@@ -57,5 +60,12 @@ public class TinNewsCard {
     @SwipeIn
     private void onSwipeIn() {
         Log.d("EVENT", "onSwipedIn");
+        article.favorite = true;
+        onSwipeListener.onLike(article);
+    }
+
+    interface OnSwipeListener {
+        void onLike(Article article);
+        void onDisLike(Article article);
     }
 }
