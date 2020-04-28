@@ -24,12 +24,12 @@
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/ic_favorite_border_black_24dp" />
 
-<!--    add text view in case the picture doesn't work-->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/title"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginEnd="20dp"/>
+<!--&lt;!&ndash;    add text view in case the picture doesn't work&ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/title"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:layout_marginEnd="20dp"/>-->
 </androidx.constraintlayout.widget.ConstraintLayout>

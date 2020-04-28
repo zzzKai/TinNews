@@ -47,7 +47,7 @@ public class SearchNewsAdapter extends RecyclerView.Adapter<SearchNewsAdapter.Se
     @Override
     public void onBindViewHolder(@NonNull SearchNewsViewHolder holder, int position) {
         Article article = articles.get(position);
-        holder.title.setText(article.title);// add title
+        //holder.title.setText(article.title);// add title
         if (article.urlToImage == null) {
             holder.newsImage.setImageResource(R.drawable.ic_empty_image);
         } else {
@@ -73,14 +73,14 @@ public class SearchNewsAdapter extends RecyclerView.Adapter<SearchNewsAdapter.Se
     public static class SearchNewsViewHolder extends RecyclerView.ViewHolder {
         ImageView newsImage;
         ImageView favorite;
-        TextView title; // add title
+        //TextView title; // add title
 
 
         public SearchNewsViewHolder(@NonNull View itemView) {
             super(itemView);
             newsImage = itemView.findViewById(R.id.image);
             favorite = itemView.findViewById(R.id.favorite);
-            title = itemView.findViewById(R.id.title); // add title
+            //title = itemView.findViewById(R.id.title); // add title
         }
     }
 }
