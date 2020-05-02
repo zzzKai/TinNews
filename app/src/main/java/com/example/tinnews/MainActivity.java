@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         // connect the view in graph
         NavigationUI.setupWithNavController(navView, navController);
         // set action bar name to change with the navigation view
-        NavigationUI.setupActionBarWithNavController(this, navController);
+        //NavigationUI.setupActionBarWithNavController(this, navController);
 
 
 
