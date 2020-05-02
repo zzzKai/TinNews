@@ -65,7 +65,10 @@ public class SaveFragment extends Fragment {
         savedNewsAdapter.setOnClickListener(new SavedNewsAdapter.OnClickListener() {
             @Override
             public void onClick(Article article) {
-                NavHostFragment.findNavController(SaveFragment.this).navigate(R.id.action_title_save_to_detail);
+//                NavHostFragment.findNavController(SaveFragment.this).navigate(R.id.action_title_save_to_detail);
+                SaveFragmentDirections.ActionTitleSaveToDetail action = SaveFragmentDirections.actionTitleSaveToDetail();
+                action.setArticle(article);
+                NavHostFragment.findNavController(SaveFragment.this).navigate(action);
             }
 
             @Override
