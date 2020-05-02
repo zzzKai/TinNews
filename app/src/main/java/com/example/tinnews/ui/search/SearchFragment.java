@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 
 import android.util.Log;
@@ -58,7 +59,7 @@ public class SearchFragment extends Fragment {
 
             @Override
             public void onClick(Article article) {
-                // TODO
+                NavHostFragment.findNavController(SearchFragment.this).navigate(R.id.action_title_search_to_detail);
             }
 
         });

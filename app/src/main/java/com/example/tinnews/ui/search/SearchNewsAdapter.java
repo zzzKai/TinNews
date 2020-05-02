@@ -58,10 +58,9 @@ public class SearchNewsAdapter extends RecyclerView.Adapter<SearchNewsAdapter.Se
             holder.favorite.setOnClickListener(null);
         } else {
             holder.favorite.setImageResource(R.drawable.ic_favorite_border_black_24dp);
-            holder.favorite.setOnClickListener(v -> {
-                        article.favorite = true;
-                        likeListener.onLike(article);
-                    });
+            holder.favorite.setOnClickListener(v -> {article.favorite = true;likeListener.onLike(article);});
+            holder.itemView.setOnClickListener(v -> {likeListener.onClick(article);});
+
         }
     }
 
