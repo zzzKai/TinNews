@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 
 import com.example.tinnews.R;
 import com.example.tinnews.databinding.FragmentSaveBinding;
+import com.example.tinnews.model.Article;
 import com.example.tinnews.repository.NewsRepository;
 import com.example.tinnews.repository.NewsViewModelFactory;
 
@@ -60,6 +61,17 @@ public class SaveFragment extends Fragment {
                                 savedNewsAdapter.setArticles(savedArticles);
                             }
                         });
+        savedNewsAdapter.setOnClickListener(new SavedNewsAdapter.OnClickListener() {
+            @Override
+            public void onClick(Article article) {
+
+            }
+
+            @Override
+            public void unLike(Article article) {
+                viewModel.deleteSavedArticle(article);
+            }
+        });
     }
 
     @Override
