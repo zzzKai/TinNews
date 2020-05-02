@@ -12,12 +12,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.tinnews.R;
+import com.example.tinnews.databinding.FragmentSavedNewsDetailBinding;
 import com.example.tinnews.model.Article;
+import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class SavedNewsDetailFragment extends Fragment {
+    private FragmentSavedNewsDetailBinding binding;
 
     public SavedNewsDetailFragment() {
         // Required empty public constructor
@@ -25,10 +28,11 @@ public class SavedNewsDetailFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_saved_news_detail, container, false);
+//        return inflater.inflate(R.layout.fragment_saved_news_detail, container, false);
+        binding = FragmentSavedNewsDetailBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
 
     @Override
@@ -41,6 +45,17 @@ public class SavedNewsDetailFragment extends Fragment {
             return;
         }
         Log.d("SaveNewsDetailFragment", article.toString());
+        binding.title.setText(article.title);
+        binding.author.setText(article.author);
+        binding.timeStamp.setText(article.publishedAt);
+        if (article.urlToImage == null || article.urlToImage.isEmpty()) {
+            binding.image.setImageResource(R.drawable.ic_empty_image);
+        } else {
+            Picasso.get().load(article.urlToImage).into(binding.image);
+        }
+        binding.description.setText(article.description);
+        binding.content.setText(article.content);
+
     }
 
 }
