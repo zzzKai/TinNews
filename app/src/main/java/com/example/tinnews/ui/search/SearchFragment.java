@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Toast;
 
-import com.example.tinnews.R;
+
 import com.example.tinnews.databinding.FragmentSearchBinding;
 import com.example.tinnews.model.Article;
 import com.example.tinnews.repository.NewsRepository;
